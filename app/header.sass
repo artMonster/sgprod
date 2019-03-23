@@ -7,19 +7,40 @@
 ::selection
 	background-color: $gold
 	color: #fff
+
+/* Let's get this party started */
+::-webkit-scrollbar
+	width: 10px
+ /* Track */
+::-webkit-scrollbar-track
+	-webkit-box-shadow: inset 0 0 20px rgba($cs, .75)
+
+/* Handle */
+::-webkit-scrollbar-thumb
+	-webkit-border-radius: 0px
+	border-radius: 0px
+	background: $ca
+	-webkit-box-shadow: inset 0 0 6px rgba($cs, .75)
+::-webkit-scrollbar-thumb:window-inactive
+	background: $ca
 img
 	display: none
 body
-	font-size: 14px
+	+theme-font($default-font, $size: 14px)
 	min-width: 320px
 	position: relative
-	line-height: 1.3rem
-	font-family: $default-font
 	overflow-x: hidden
 	color: $text
 	margin: 0
 	padding: 0
 	border: 0
+	scrollbar-face-color:#5997CA
+	scrollbar-shadow-color: #ffffff
+	scrollbar-highlight-color: #ffffff
+	scrollbar-3dlight-color: #5997CA
+	scrollbar-darkshadow-color: #5997CA
+	scrollbar-track-color: #F6F6F6
+	scrollbar-arrow-color: #F6F6F6
 	input, textarea
 		border: #666 1px solid
 		outline: none
@@ -41,66 +62,184 @@ body
 		&.touch
 			#app
 				opacity: 1
+p, h1
+	margin: 0
+	padding: 0
+p
+	margin-bottom: 10px
+.ca
+	color: $ca
+.cs
+	color: $cs
+.cw
+	color: $cw
+.cg
+	color: $cg
+.bgca
+	background-color: $ca
+.bgcs
+	background-color: $cs
+.bgcw
+	background-color: $cw
+.bgcg
+	background-color: $cg
+.b-upp
+	font-family: $bold-font
+	text-transform: uppercase
+.upp
+	text-transform: uppercase
+.bgw
+	background-color: white
+
++font-styles
+
+.height-full
+	height: auto
+	.container>.row
+		height: auto
+		padding-top: 15px
+.title
+	transform: skewY(-6deg)
+	margin-left: auto
+	margin-right: auto
+	margin-bottom: 30px
+	margin-top: 30px
+	overflow: hidden
+	max-width: 540px
+	span
+		background: linear-gradient(to right,$cs 10%,$ca 90%)
+		-webkit-text-fill-color: transparent
+		color: $cs
+		-webkit-background-clip: text
+		display: block
+	small
+		display: block
+		background: none
+		padding-bottom: 5px
+	p
+		margin: 0
+ul.lists
+	margin: 0 0 40px 0
+	padding: 0 15px 0 0
+	list-style: none
+	li
+		position: relative
+		margin-bottom: 20px
+		&:before
+			content: ""
+			width: 10px
+			height: 2px
+			position: absolute
+			left: -20px
+			top: 10px
+			background-color: $ca
+			transform: skewY(-10deg)
+.t-accent
+	position: relative
+	margin-bottom: 30px
+	&:before
+		content: ""
+		width: 10px
+		height: 100%
+		position: absolute
+		left: -30px
+		top: 15px
+		background: linear-gradient(to bottom,$ca 30%,$cs 100%)
+		transform: skewY(-10deg)
+.bt
+	+theme-font($default-font, $size: 16px)
+	border: 0
+	border-radius: 0px!important
+	background: linear-gradient(to right,$ca 30%,$cs 100%)
+	color: #fff
+	padding: 21px 26px 0px 26px
+	min-height: 60px
+	display: inline-block
+	text-transform: uppercase
+	vertical-align: middle
+	text-align: center
+	min-width: 190px
+	transform: translateY(0px) skewY(-6deg)
+	margin-bottom: 30px
+	margin-top: 15px
+	&:hover
+		transform: translateY(-3px) translateX(5px) skewY(-6deg)
+		filter: hue-rotate(-40deg)
+	&.bt-invert
+		background: none
+		border: 3px solid $cs
+		min-height: auto
+		padding-top: 8px
+		padding-bottom: 8px
+		color: $cs
+
+.sec, .sec-b
+	background-size: cover
+	background-repeat: no-repeat
+	padding-top: 60px
+	padding-bottom: 60px
+	overflow: hidden
+	position: relative
+.sec-b
+	color: $cw
+	.title
+		span
+			background: linear-gradient(to right,$cw 0%,$ca 100%)
+			-webkit-text-fill-color: transparent
+			color: $cw
+			-webkit-background-clip: text
+			display: block
+.sec1
+	.logo
+		margin-left: 20px
+	.text-left
+		text-align: center
+.sec2
+	background-image: url('../m/img/sec2.png')
+	background-position: 50% 0%
+.sec4
+	background-image: url('../m/img/sec4.png')
+	background-position: 50% 0%
+.sec5
+	.item-icon
+		position: relative
+		background-image: url('../img/bg_icon.png')
+		background-position: 30px 0px
+		background-repeat: no-repeat
+		padding-top: 10px
+		padding-bottom: 5px
+		margin-bottom: 0px
+		margin-top: 30px
+		p
+			padding-left: 110px
+			padding-top: 30px
+			min-height: 52px
+	.img-icon
+		max-width: 75px
+		position: absolute
+		top: -20px
+		left: 0
+
+.sec2, .sec4
+	margin-top: -30px
+
 .bgi
 	position: absolute
 	top: 0
 	right: 0
 	left: auto
-	width: 768px
+	width: 100%
 	height: auto
-	opacity: .8
 	&.bgfix
 		position: fixed
 		z-index: -1
-		img
-			height: auto
-			width: 100%
+	img
+		height: 100%
+		width: auto
+		margin-left: calc(50vw - 960px)
+		margin-top: calc(50vh - 510px)
 	picture
 		width: 100%
-.title
-	transform: skewY(-8deg)
-	max-width: 300px
-	width: 100%
-	margin-left: auto
-	margin-right: auto
-	margin-bottom: 30px
-	overflow: hidden
-	.h4
-		font-size: $h4
-		line-height: 2rem
-		font-family: $bold-font
-		text-transform: uppercase
-		letter-spacing: -0.05rem
-		display: block
-		margin: 0
-		padding: 0
-	.h3
-		font-size: 26px
-		line-height: 1.6rem
-		font-family: $bold-font
-		text-transform: uppercase
-		letter-spacing: -0.05rem
-		display: block
-		margin-bottom: 8px
-		margin-top: 8px
-		span
-			background: linear-gradient(to right,$gr1 30%,$gr2 100%)
-			-webkit-text-fill-color: transparent
-			color: #b42fa8
-			-webkit-background-clip: text
-			display: block
-		small
-			display: inline
-			font-family: $light-font
-	small
-		font-size: 18px
-		text-transform: none
-		display: block
-		line-height: 20px
-		background: none
-		&.fz24
-			font-size: 16px
-			color: $gr1
 .text-left
 	text-align: left
 .text-right
@@ -111,9 +250,9 @@ body
 	transition: opacity .2s ease-out
 	overflow: hidden
 .sec.sec0
-	background-image: url('../m/img/bg_new.jpg')
+	
 	background-repeat: no-repeat
-	background-position: 50% 0%
+	background-position: 50% 100%
 	background-size: cover
 	background-color: #55294e
 	padding: 0
@@ -125,8 +264,7 @@ a, button, .thumb
 
 span.target
 	transition: 2s ease
-p
-	font-size: 14px
+
 .img-responsive
 	display: block
 	max-width: 100%
@@ -140,13 +278,13 @@ p
 	&>[class*="col-"]
 		padding-right: 0
 		padding-left: 0
-.text-center
+.tc
 	text-align: center
 	img
 		margin-left: auto
 		margin-right: auto
 		
-.text-right
+.tr
 	text-align: right
 .text-left
 	text-align: left
@@ -162,58 +300,11 @@ picture
 	display: inline-block
 .lead-l
 	font-family: $default-font
-.b-upp
-	font-family: $bold-font
-	text-transform: uppercase
-.upp
-	text-transform: uppercase
-.cg
-	color: $gold
-.ct
-	color: $text
-.cgr
-	color: $gray
-.gr1
-	color: $gr1
-.gr2
-	color: $gr2
-.cw
-	color: white
-.sec-b
-	color: #fff
-.bgw
-	background-color: white
+
 .bggr
 	background-color: $gray
 button.bt
 	padding-top: 2px
-.bt
-	font-family: $bold-font
-	border: 0
-	border-radius: 0px!important
-	background: linear-gradient(to right,$gr1 30%,$gr2 100%)
-	font-size: 15px
-	color: #fff
-	padding: 21px 26px 0px 26px
-	min-height: 60px
-	display: inline-block
-	text-transform: uppercase
-	vertical-align: middle
-	text-align: center
-	line-height: normal
-	min-width: 190px
-	letter-spacing: .037rem
-	transform: translateY(0px) skewY(-8deg)
-	&:hover
-		transform: translateY(-3px) translateX(5px) skewY(-8deg)
-		filter: hue-rotate(-40deg)
-	&.bt-invert
-		background: none
-		border: 3px solid $gr2
-		min-height: auto
-		padding-top: 8px
-		padding-bottom: 8px
-		color: $gr2
 .play
 	background: none
 	width: 60px
@@ -257,13 +348,6 @@ button.bt
 	padding-bottom: 10px
 	font-size: 9px
 	padding-right: 10px
-
-.sec
-	background-size: contain
-	background-repeat: no-repeat
-	background-position: 50% 0%
-	padding-top: 60px
-	padding-bottom: 60px
 .text-center
 	h3
 		position: relative
@@ -320,6 +404,7 @@ ul
 	width: 100%
 	left: 0
 	top: 0
+	padding-top: 10px
 	&.fix
 		position: fixed
 		z-index: 22
@@ -345,29 +430,30 @@ ul
 			font-size: 16px
 			transform: none
 			&:hover
-				color: $gr1
-				border-color: $gr2
+				color: $ca
+				border-color: $cs
 	.bt
 		transform: none
 		&.popup
 			display: none
 	.logo
-		max-width: 80px
+		max-height: 50px
 	.row
-		height: 50px
+		height: auto
 	span
 		color: $gold
 	p
 		margin-bottom: 5px
 		margin-top: 0
 	.phone
-		background: linear-gradient(to right,$gr1 0,$gr2 100%)
+		background: linear-gradient(to right,$ca 0,$cs 100%)
 		-webkit-text-fill-color: transparent
 		color: #b42fa8
 		-webkit-background-clip: text
 		display: inline-block
 		padding: 2px
 		border-color: transparent
+		margin: 0
 	a:hover
 		.phone
 			filter: hue-rotate(-40deg)
@@ -392,7 +478,7 @@ ul
 			position: absolute
 			left: 0px
 			top: 12px
-			background-color: $gr1
+			background-color: $ca
 			transform: skewY(-12deg)
 	.g1
 		transform: translateX(220px)
@@ -404,42 +490,6 @@ ul
 		transform: translateX(150px) translateY(140px)
 	.g5
 		transform: translateX(50px) translateY(180px)
-.data
-	max-width: 162px
-	width: 100%
-	background-image: url('../img/SVG/bg-data.svg')
-	background-repeat: no-repeat
-	background-position: 0
-	text-align: center
-	padding-top: 30px
-	padding-bottom: 30px
-	padding-left: 20px
-	position: relative
-	left: 0
-	display: none
-	margin-left: auto
-	margin-right: auto
-	p
-		margin-top: 0
-		padding-bottom: 5px
-	.fz36
-		transform: translateX(60px)
-.first-sec
-	.title
-		margin-bottom: 0px
-	.logo
-		margin-left: 20px
-	p
-		margin-bottom: 0
-		//font-size: 12px
-		line-height: 1.1rem
-	.bt
-		margin-top: 30px
-	.text-left
-		text-align: center
-.height-full
-	height: auto
-	min-height: 640px
 .row-f
 	height: auto
 	min-height: 520px	
@@ -469,19 +519,99 @@ h3
 		font-size: 1rem
 @keyframes anim_plus
 	0%
-		//transform: translateY(0px)
-		opacity: 1
-	25%
-		//transform: translateY(10px)
+		//transform: translateY(30%)
 		opacity: 0
-	50%
+	.1%
+		//transform: translateY(30%)
 		opacity: 1
-		//transform: translateY(-27px)
-	75%
+	20%
+		//transform: translateY(30%)
+		opacity: 1
+	20.1%
+		//transform: translateY(30%)
+		opacity: 0
+	20.2%
+		//transform: translateY(-20%)
+		opacity: 0
+	20.3%
+		//transform: translateY(-20%)
+		opacity: 1
+	40%
+		//transform: translateY(-20%)
+		opacity: 1
+	40.1%
+		//transform: translateY(-20%)
+		opacity: 0
+	60.2%
+		//transform: translateY(60%)
+		opacity: 0
+	60.3%
+		//transform: translateY(60%)
+		opacity: 1
+	80%
+		//transform: translateY(60%)
+		opacity: 1
+	80.1%
+		//transform: translateY(60%)
+		opacity: 0
+	80.2%
+		//transform: translateY(20%)
+		opacity: 0
+	80.3%
+		//transform: translateY(20%)
+		opacity: 1
+	90%
+		//transform: translateY(0)
+		opacity: 1
+	90.1%
+		//transform: translateY(0)
 		opacity: 0
 	100%
-		//transform: translateY(40px)
+		transform: translateY(0)
+		opacity: 0
+@keyframes anim_plus2
+	40%
+		//transform: translateY(30%)
+		opacity: 0
+	40.1%
+		//transform: translateY(30%)
 		opacity: 1
+	50%
+		//transform: translateY(30%)
+		opacity: 1
+	50.1%
+		//transform: translateY(30%)
+		opacity: 0
+	50.2%
+		//transform: translateY(-20%)
+		opacity: 0
+	50.3%
+		//transform: translateY(-20%)
+		opacity: 1
+	60%
+		//transform: translateY(-20%)
+		opacity: 1
+	60.1%
+		//transform: translateY(-20%)
+		opacity: 0
+	70.2%
+		//transform: translateY(60%)
+		opacity: 0
+	70.3%
+		//transform: translateY(60%)
+		opacity: 1
+	80%
+		//transform: translateY(60%)
+		opacity: 1
+	80.1%
+		//transform: translateY(60%)
+		opacity: 0
+	80.2%
+		//transform: translateY(20%)
+		opacity: 0
+	100%
+		transform: translateY(0)
+		opacity: 0
 .lines
 	position: absolute
 	top: 20px
@@ -491,140 +621,164 @@ h3
 		display: inline-block
 		width: 100%
 		margin-bottom: 2.5%
-		animation: anim_plus 3.5s
-		animation-fill-mode: forwards
-		animation-timing-function: ease-in-out
+		animation: anim_plus2 4s
+		animation-timing-function: linear
 		animation-iteration-count: infinite
 		&:nth-child(2)
-			animation: anim_plus 3s
-			animation-fill-mode: forwards
-			animation-timing-function: ease-in-out
+			animation: anim_plus 2s
+			animation-timing-function: linear
 			animation-iteration-count: infinite
 		&:nth-child(3)
-			animation: anim_plus 3.5s
-			animation-fill-mode: forwards
-			animation-timing-function: ease-in-out
+			animation: anim_plus2 6s
+			animation-timing-function: linear
 			animation-iteration-count: infinite
-			animation-delay: 3.2s
 		&:nth-child(4)
-			animation: anim_plus 5s
-			animation-fill-mode: forwards
-			animation-timing-function: ease-in-out
+			animation: anim_plus 3s
+			animation-timing-function: linear
 			animation-iteration-count: infinite
-			animation-delay: 5.8s
 		&:nth-child(5)
-			animation: anim_plus 3.5s
-			animation-fill-mode: forwards
-			animation-timing-function: ease-in-out
+			animation: anim_plus2 5s
+			animation-timing-function: linear
 			animation-iteration-count: infinite
-			animation-delay: 3.6s
 		&:nth-child(6)
-			animation: anim_plus 2s
-			animation-fill-mode: forwards
-			animation-timing-function: ease-in-out
+			animation: anim_plus 4s
+			animation-timing-function: linear
 			animation-iteration-count: infinite
 		&:nth-child(7)
-			animation: anim_plus 5.5s
-			animation-fill-mode: forwards
-			animation-timing-function: ease-in-out
+			animation: anim_plus2 2s
+			animation-timing-function: linear
 			animation-iteration-count: infinite
-			animation-delay: 3.2s
+		&:nth-child(8)
+			animation: anim_plus 6s
+			animation-timing-function: linear
+			animation-iteration-count: infinite
+		&:nth-child(9)
+			animation: anim_plus2 3s
+			animation-timing-function: linear
+			animation-iteration-count: infinite
+		&:nth-child(10)
+			animation: anim_plus 5s
+			animation-timing-function: linear
+			animation-iteration-count: infinite
 	svg
 		display: inline
 		max-width: 100%
 		opacity: .8
 		&.svg-25
-			max-width: 35%
+			max-width: 40%
 		&.svg-50
-			max-width: 65%
+			max-width: 70%
 		&.svg-75
-			max-width: 85%
+			max-width: 90%
 	line
 		stroke-width: 1px
-		stroke-dasharray: 480
-		stroke-dashoffset: 1200
-		stroke: $gr1
+		stroke-dasharray: 150%
+		stroke-dashoffset: -150%
+		stroke: $cs
 		z-index: -1
+		opacity: .5
 		&.l1
-			animation: anim_lines 4.9s
+			animation: anim_lines3 .5s
 			animation-fill-mode: forwards
-			animation-timing-function: ease-out
+			animation-timing-function: linear
 			animation-iteration-count: infinite
+			animation-delay: 1s
 		&.l2
-			animation: anim_lines2 5.3s
+			animation: anim_lines3 1s
 			animation-fill-mode: forwards
-			animation-timing-function: ease-out
+			animation-timing-function: linear
 			animation-iteration-count: infinite
+			animation-delay: 2s
 		&.l3
-			animation: anim_lines3 4.35s
+			animation: anim_lines3 .5s
 			animation-fill-mode: forwards
-			animation-timing-function: ease-out
+			animation-timing-function: linear
 			animation-iteration-count: infinite
+			animation-delay: 1s
 		&.l4
-			animation: anim_lines4 5.7s
+			animation: anim_lines3 1s
 			animation-fill-mode: forwards
-			animation-timing-function: ease-out
+			animation-timing-function: linear
 			animation-iteration-count: infinite
+			animation-delay: 2s
 @keyframes anim_lines3
 	100%
-		stroke-dasharray: 480
-		stroke-dashoffset: 50
+		stroke-dasharray: 150%
+		stroke-dashoffset: 125%
+		stroke-width: 1px
+		stroke: $ca
+		opacity: 0
+	80%
+		stroke-dasharray: 150%
+		stroke-dashoffset: 125%
+		stroke-width: 1px
+		stroke: $ca
+		opacity: 0
+	60%
+		stroke-dasharray: 125%
+		stroke-dashoffset: 75%
 		stroke-width: 2px
+		opacity: 1
 	40%
-		stroke-dasharray: 480
-		stroke-dashoffset: -480
-		stroke-width: 4px
-	0%
-		stroke-dasharray: 480
-		stroke-dashoffset: -1440
+		stroke-dasharray: 100%
+		stroke-dashoffset: 0%
+		stroke-width: 1px
+		stroke: $cs
+	20%
+		stroke-dasharray: 125%
+		stroke-dashoffset: -75%
 		stroke-width: 2px
-		stroke: $gr2
+	0%
+		stroke-dasharray: 150%
+		stroke-dashoffset: -150%
+		stroke-width: 2px
 
 @keyframes anim_lines2
 	100%
 		stroke-dasharray: 480
 		stroke-dashoffset: 50
-		stroke-width: 2px
+		stroke-width: 1px
 	70%
 		stroke-dasharray: 480
 		stroke-dashoffset: -1440
-		stroke-width: 4px
+		stroke-width: 2px
 	0%
 		stroke-dasharray: 480
 		stroke-dashoffset: -1920
-		stroke-width: 2px
-		stroke: $gr2
+		stroke-width: 1px
+		stroke: $cs
 
 @keyframes anim_lines4
 	100%
 		stroke-dasharray: 480
 		stroke-dashoffset: 1540
-		stroke-width: 2px
+		stroke-width: 1px
 	30%
 		stroke-dasharray: 480
 		stroke-dashoffset: 480
-		stroke-width: 4px
+		stroke-width: 2px
 	0%
 		stroke-dasharray: 480
 		stroke-dashoffset: -480
-		stroke-width: 2px
-		stroke: $gr2
+		stroke-width: 1px
+		stroke: $cs
 
 @keyframes anim_lines
 	100%
 		stroke-dasharray: 480
 		stroke-dashoffset: 50
-		stroke-width: 4px
+		stroke-width: 2px
 	45%
 		stroke-dasharray: 480
 		stroke-dashoffset: -480
-		stroke-width: 2px
+		stroke-width: 1px
 	25%
 		stroke-dasharray: 480
 		stroke-dashoffset: -1440
-		stroke-width: 4px
+		stroke-width: 2px
 	0%
 		stroke-dasharray: 480
 		stroke-dashoffset: -2400
-		stroke-width: 2px
-		stroke: $gr2
+		stroke-width: 1px
+		stroke: $cs
+		

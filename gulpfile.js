@@ -214,7 +214,8 @@ gulp.task('processImages', function () {
         rename: {
           //suffix: '_m',
           extname: '.jpg'
-        }
+        },
+        format: 'jpg'
       }, {
         // Convert images to the webp format
         width: 700,
