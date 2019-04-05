@@ -294,7 +294,7 @@ gulp.task('deploy', function () {
 
     return gulp.src(globs, { base: './dist', buffer: false })
         //.pipe(conn.newer('/instamania.com.ua/www/_dev'));
-        .pipe(conn.dest('/salesgeneration.top/www/lp'));
+        .pipe(conn.dest('/salesgeneration.top/www/_lp'));
 });
 
 gulp.task('dep', function () {
@@ -317,7 +317,7 @@ gulp.task('dep', function () {
 
     return gulp.src(globs, { base: './dist', buffer: false })
         //.pipe(conn.newer('/instamania.com.ua/www/_dev'));
-        .pipe(conn.dest('/salesgeneration.top/www/lp'));
+        .pipe(conn.dest('/salesgeneration.top/www/_lp'));
 });
 
 gulp.task('clearcache', function () { return cache.clearAll(); });

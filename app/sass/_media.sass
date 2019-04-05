@@ -21,29 +21,60 @@
 // ≤576px
 +media-breakpoint-up(sm)
 
+	.bt
+		width: auto
+	ul.lists
+		li
+			padding-left: 0px
+			&:before
+				left: -30px
+				top: 10px
+	.t-accent
+		padding: 0 0 0 0
+		&:before
+			left: -30px
+		&.accent-slim
+			&:before
+				left: 0px
+
 // ≤768px
 +media-breakpoint-up(md)
 	.height-full
 		min-height: 640px
 		.container>.row
-			height: calc(100vh - 60px)
+			height: calc(100vh - 120px)
 			min-height: 640px
 	.sec2
 		background-image: url('../img/sec2.png')
 		background-position: 50% 0%
+	.sec3
+		background-image: url('../img/sec3.png')
+		background-position: 50% 100%
+		background-size: 100%
 	.sec4
-		background-image: url('../img/sec4.png')
+		margin-top: -90px
+	.sec6
+		background-image: url('../img/sec6.jpg')
 		background-position: 50% 0%
+		background-size: cover
+	.sec10
+		background-image: url('../img/sec10.jpg')
+		background-position: 22% 100%
+		background-size: cover
+		padding-top: 60px
+		.t-accent
+			margin-top: 0
+			max-width: 50%
+		.lists
+			max-width: 50%
+	.sec12
+		background-image: url('../img/sec4.jpg')
 	.header
 		.bt.popup
 			display: inline-block
-	.sec.sec3 .title
+	.sec.sec3 .title 
 		max-width: 480px
 		margin-bottom: 60px
-	.sec.sec4
-		background-size: auto 315px
-		.title
-			max-width: 480px
 	.sec.sec5
 		.title
 			max-width: 480px
@@ -58,37 +89,35 @@
 			font-size: 36px
 		.text-left
 			text-align: left
-	footer
-		background-image: url('../img/sec0.jpg')
 // ≤992px
 +media-breakpoint-up(lg)
+	.sec10
+		background-position: 50% 100%
+	.sec10 .t-accent,
+	.sec10 .lists
+		max-width: 100%
+	.sec8
+		.title-fix
+			position: absolute
+			width: 460px
+			height: 100vh
+			top: 33vh
+		&.fix
+			.title-fix
+				position: fixed
+				top: 44vh
+		&.fixer
+			.title-fix
+				position: absolute
+				top: auto
+				bottom: -73vh
 	.sec.sec5 ul li
 		max-width: 300px
 	.days
 		max-width: 300px
-	.sec.sec6
-		padding-bottom: 0px
-		background-position: 50% 100%
-		background-size: contain
-		background-color: #3c1c40
 	.row-f
 		height: 100vh
-	.sec.sec4
-		background-position: 25% 0%
-		padding-bottom: 40px
-		background-size: cover
-	.sec.sec6
-		background-size: cover
-		padding-bottom: 80px
-		padding-top: 80px
-		.title .h4
-			text-align: left
-		.title.text-right .h4
-			text-align: right
 	.header
 		padding-top: 15px
 // ≤1200px
 +media-breakpoint-up(xl)
-	.sec.sec4
-		background-position: 45% 0%
-		padding-bottom: 80px

@@ -26,7 +26,8 @@ $container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px)
 $gutter: $grid-gutter-width
 
 // fonts
-@mixin theme-font($family: $default-font, $size: 14px, $spacing: false)
+@mixin theme-font($family: $default-font, $size: 14px, $spacing: false, $pad-b: 0)
+	padding-bottom: $size / 2.8
 	font-family: $family
 	font-size: $size
 	line-height: $size + ($size * .25)
@@ -46,7 +47,7 @@ $gutter: $grid-gutter-width
 	.f-smile
 		+theme-font($default-font, 14px)
 	.f-medium
-		+theme-font($default-font, 18px)
+		+theme-font($default-font, 16px)
 	.f-lead
 		+theme-font($default-font, 18px)
 	.f-title
@@ -54,6 +55,8 @@ $gutter: $grid-gutter-width
 		text-transform: uppercase
 	.f-h1
 		+theme-font($bold-font, 28px, 0.015rem)
+	.f-big
+		+theme-font($default-font, 48px)
 	@media (min-width: 576px)
 		.f-micro
 			+theme-font($default-font, 12px)
@@ -64,10 +67,12 @@ $gutter: $grid-gutter-width
 		.f-lead
 			+theme-font($default-font, 24px)
 		.f-title
-			+theme-font($default-font, 36px)
+			+theme-font($bold-font, 36px)
 			text-transform: uppercase
 		.f-h1
 			+theme-font($bold-font, 48px)
+		.f-big
+			+theme-font($default-font, 36px)
 	@media (min-width: 768px)
 		.f-micro
 			+theme-font($default-font, 12px)
@@ -82,6 +87,8 @@ $gutter: $grid-gutter-width
 			text-transform: uppercase
 		.f-h1
 			+theme-font($bold-font, 48px)
+		.f-big
+			+theme-font($default-font, 36px)
 	@media (min-width: 992px)
 		.f-micro
 			+theme-font($default-font, 12px)
@@ -96,3 +103,5 @@ $gutter: $grid-gutter-width
 			text-transform: uppercase
 		.f-h1
 			+theme-font($bold-font, 48px)
+		.f-big
+			+theme-font($default-font, 36px)

@@ -66,7 +66,7 @@ p, h1
 	margin: 0
 	padding: 0
 p
-	margin-bottom: 10px
+	margin-bottom: 12px
 .ca
 	color: $ca
 .cs
@@ -103,8 +103,7 @@ p
 	margin-left: auto
 	margin-right: auto
 	margin-bottom: 30px
-	margin-top: 30px
-	overflow: hidden
+	margin-top: 15px
 	max-width: 540px
 	span
 		background: linear-gradient(to right,$cs 10%,$ca 90%)
@@ -112,56 +111,78 @@ p
 		color: $cs
 		-webkit-background-clip: text
 		display: block
+		filter: drop-shadow(-14px 7px 1px rgba($text, .15))
 	small
 		display: block
 		background: none
 		padding-bottom: 5px
 	p
 		margin: 0
+	&.title-border
+		border-right: 2px solid rgba($ca, 1)
+		padding: 0px 30px 0 20px
+		display: inline-block
+		margin-top: 15px
+		margin-bottom: 0
+		border-bottom: none!important
 ul.lists
-	margin: 0 0 40px 0
+	margin: 15px 0 30px 0
 	padding: 0 15px 0 0
 	list-style: none
 	li
 		position: relative
-		margin-bottom: 20px
+		margin-bottom: 10px
+		padding-left: 15px
+		text-align: left
 		&:before
 			content: ""
 			width: 10px
-			height: 2px
+			height: 3px
 			position: absolute
-			left: -20px
-			top: 10px
+			left: 0px
+			top: 8px
 			background-color: $ca
-			transform: skewY(-10deg)
+			transform: skewY(-8deg)
+	&.list-cg
+		li
+			&:before
+				background-color: rgba($cg, .4)
 .t-accent
 	position: relative
+	//display: inline-block
+	width: auto
 	margin-bottom: 30px
+	padding-left: 10px
 	&:before
 		content: ""
-		width: 10px
+		width: 6px
 		height: 100%
 		position: absolute
-		left: -30px
+		left: -15px
 		top: 15px
 		background: linear-gradient(to bottom,$ca 30%,$cs 100%)
-		transform: skewY(-10deg)
+		transform: skewY(-8deg)
+	&.accent-slim
+		padding-left: 15px
+		&:before
+			width: 3px
+			left: 15px
 .bt
 	+theme-font($default-font, $size: 16px)
 	border: 0
 	border-radius: 0px!important
 	background: linear-gradient(to right,$ca 30%,$cs 100%)
 	color: #fff
-	padding: 21px 26px 0px 26px
+	padding: 21px 18px 0px 18px
 	min-height: 60px
 	display: inline-block
 	text-transform: uppercase
 	vertical-align: middle
 	text-align: center
-	min-width: 190px
 	transform: translateY(0px) skewY(-6deg)
 	margin-bottom: 30px
 	margin-top: 15px
+	width: 100%
 	&:hover
 		transform: translateY(-3px) translateX(5px) skewY(-6deg)
 		filter: hue-rotate(-40deg)
@@ -172,38 +193,86 @@ ul.lists
 		padding-top: 8px
 		padding-bottom: 8px
 		color: $cs
-
+		width: auto
+		min-width: auto
+	&.bt-more
+		+theme-font($bold-font, $size: 36px)
+		padding: 0px 12px
+		margin: 0
+		position: relative
+		z-index: 11
+		width: auto
+		min-width: auto
 .sec, .sec-b
 	background-size: cover
 	background-repeat: no-repeat
 	padding-top: 60px
 	padding-bottom: 60px
-	overflow: hidden
 	position: relative
 .sec-b
 	color: $cw
 	.title
 		span
-			background: linear-gradient(to right,$cw 0%,$ca 100%)
+			background: linear-gradient(to right,$cw 0%,rgba($cw, .8) 100%)
 			-webkit-text-fill-color: transparent
 			color: $cw
 			-webkit-background-clip: text
 			display: block
+			filter: drop-shadow(-14px 10px 10px rgba($cw, .3))
 .sec1
 	.logo
 		margin-left: 20px
 	.text-left
 		text-align: center
+	
+.slogan
+	.title
+		margin-bottom: 10px
 .sec2
-	background-image: url('../m/img/sec2.png')
-	background-position: 50% 0%
+	background-image: url('img/sec2.png')
+	background-position: 35% 0%
+	padding-bottom: 215px
+	.row
+		min-height: 460px
+.sec3
+	background-image: url('img/sec3.png')		
+	position: relative
+	z-index: 3
+	background-size: 150%
+	background-position: 35% 100%
+	padding-bottom: 260px
 .sec4
-	background-image: url('../m/img/sec4.png')
+	position: relative
+	z-index: 1
+	padding-top: 140px
+	background-color: #170506
+	margin-top: -100px
+	&:before
+		content: ""
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 0px
+		top: 0px
+		margin-top: 0px
+		background-position: 50% 0%
+		background-image: url('img/sec4.jpg')
+		background-repeat: no-repeat
+		background-size: cover
+
+.sec5, .sec11
+	background-image: url('img/SVG/bg-top.svg')
 	background-position: 50% 0%
-.sec5
+	background-size: 210%
+	position: relative
+	padding-bottom: 120px
+	padding-top: 120px
+	margin-top: -40px
+	z-index: 3
+
 	.item-icon
 		position: relative
-		background-image: url('../img/bg_icon.png')
+		background-image: url('img/bg_icon.png')
 		background-position: 30px 0px
 		background-repeat: no-repeat
 		padding-top: 10px
@@ -220,9 +289,109 @@ ul.lists
 		top: -20px
 		left: 0
 
-.sec2, .sec4
-	margin-top: -30px
+.sec6
+	background-image: url('m/img/sec6.jpg')
+	background-color: #111
+	background-position: 40% 0%
+	//background-size: cover
+	background-size: 150%
+	.t-accent
+		margin-top: 30px
+		margin-bottom: 10px
+.sec8
+	position: relative
+	z-index: 2
+	padding-top: 100px
+	background-color: #170506
+	&:before
+		content: ""
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 0px
+		top: 0px
+		background-position: 50% 0%
+		background-image: url('img/sec8.jpg')
+		background-repeat: no-repeat
+		background-size: contain
+		
+.sec9
+	background-image: url('img/SVG/bg-top.svg')
+	background-position: 50% 0%
+	background-size: 220%
+	position: relative
+	z-index: 2
+	.bt
+		margin-bottom: 60px
 
+.sec2, .sec9, .sec8
+	margin-top: -40px
+	//padding-top: 120px
+	.title
+		margin-top: 60px
+		margin-bottom: 0px
+.sec10
+	background-image: url('m/img/sec10.jpg')
+	background-position: 50% -50px
+	background-size: 220%
+	background-color: #111
+	padding-top: 10px
+	.first
+		margin-top: 220px
+	.lists
+		max-width: 260px
+		li
+			text-align: left
+.sec12
+	background-image: url('img/sec4.jpg')
+	background-position: 50% 0%
+	padding-top: 100px
+	.img-circle
+		width: 50px
+		height: 50px
+.paks
+	padding-right: 15px
+	.title
+		margin-top: 0
+		border-bottom: 4px solid $cs
+		margin-bottom: 40px
+	.bt
+		width: 100%
+	ul.lists
+		li
+			&:before
+				left: -15px
+.more
+	height: 0
+	overflow: hidden
+	position: relative
+	padding-bottom: 60px
+	transform: translateY(-70px)
+	&:before
+		content: ""
+		width: calc(90% - 60px)
+		height: 2px
+		position: absolute
+		right: 30px
+		bottom: 30px
+		background-color: $cs
+		transform: skewY(-6deg)
+	.lists
+		opacity: 0
+		transition: .2s ease-out
+.open
+	.bt-more
+		display: none
+	.more
+		height: auto
+		padding-bottom: 30px
+		transform: translateY(0px)
+		.lists
+			opacity: 1
+			transition: 1.8s ease-out
+.it
+	.t-accent
+		margin-top: 15px
 .bgi
 	position: absolute
 	top: 0
@@ -237,7 +406,7 @@ ul.lists
 		height: 100%
 		width: auto
 		margin-left: calc(50vw - 960px)
-		margin-top: calc(50vh - 510px)
+		margin-top: calc(50vh - 490px)
 	picture
 		width: 100%
 .text-left
@@ -250,7 +419,6 @@ ul.lists
 	transition: opacity .2s ease-out
 	overflow: hidden
 .sec.sec0
-	
 	background-repeat: no-repeat
 	background-position: 50% 100%
 	background-size: cover
@@ -258,12 +426,16 @@ ul.lists
 	padding: 0
 	.logo
 		max-width: 140px
-a, button, .thumb
-	transition:  .15s ease-out
+a, button, .thumb,
+	transition: .15s ease-out
 	cursor: pointer
-
+.more
+	transition: .15s ease-out
 span.target
 	transition: 2s ease
+
+.title-fix
+	transition: .3s ease-out
 
 .img-responsive
 	display: block
@@ -286,8 +458,11 @@ span.target
 		
 .tr
 	text-align: right
-.text-left
+.tl
 	text-align: left
+.pr
+	position: relative
+	
 a
 	text-decoration: none!important
 b, strong
@@ -410,30 +585,30 @@ ul
 		z-index: 22
 		width: 100%
 		left: 0
-		background: linear-gradient(to right,$gr0 0,$gr3 100%)
+		background-color: $cw
 		top: 0
 		padding-top: 0px
+		border-bottom: 2px solid $text
 		&:after
 			display: none
 		&:before
-			background-color: #fff
+			background-color: $cw
 		span
 			color: #fff
 		.row
 			height: 60px
-		.logo
-			max-width: 80px
-			filter: invert(50%) brightness(2)
 		.bt
 			padding: 6px 12px
 			min-height: 32px
 			font-size: 16px
 			transform: none
+			margin: 0
 			&:hover
 				color: $ca
 				border-color: $cs
 	.bt
 		transform: none
+		margin: 0
 		&.popup
 			display: none
 	.logo
@@ -457,6 +632,162 @@ ul
 	a:hover
 		.phone
 			filter: hue-rotate(-40deg)
+footer
+	background-repeat: no-repeat
+	background-position: 50% 30%
+	background-size: cover
+	padding-top: 20px
+	padding-bottom: 20px
+	.ico
+		opacity: .2
+		font-size: 36px
+		padding-top: 10px
+		padding-bottom: 10px
+		display: inline-block
+	p, span
+		color: $cg
+		font-size: 13px
+		line-height: 17px
+		&.cg
+			opacity: .5
+	.t-accent
+		margin-bottom: 15px
+	.nav-cont
+		+theme-font($default-font, $size: 18px)
+		margin-bottom: 18px
+		margin-right: 10px
+		span
+			+theme-font($default-font, $size: 18px)
+	a
+		color: $cs
+		padding: 0
+		margin: 0
+		&:hover
+			border-color: transparent
+			color: $ca
+			span
+				color: $ca
+	.nav-link
+		+theme-font($default-font, $size: 12px)
+		opacity: .5
+		color: $ca
+		border-bottom: 1px dotted $gr1
+		margin-right: 10px
+		display: inline-block
+		margin-bottom: 5px
+		&:hover
+			border-color: transparent
+			color: $cs
+			opacity: 1
+	.contacts
+		margin-bottom: 20px
+		border-bottom: 1px dotted rgba(white, .2)
+		padding-bottom: 30px
+	.card
+		opacity: .2
+		margin-bottom: 18px
+	.logo
+		margin-left: auto
+		margin-right: auto
+		max-width: 100px
+		width: 100%
+		display: block
+		margin-bottom: 15px
+
+form
+	input, textarea
+		border: 1px solid $gold
+		padding: 16px
+		width: 100%
+		margin-bottom: 10px
+		font-size: 16px
+		font-family: $bold-font
+	.bt
+		width: 100%
+		margin-bottom: 15px
+		margin-top: 25px
+.form
+	max-width: 420px
+	margin: 0 auto
+	position: relative
+	border-bottom: 2px solid $cs
+	border-radius: 0px
+	background-color: #fff
+	padding: 46px
+	.preloader
+		animation-play-state: paused
+		opacity: 0
+	&.send
+		.preloader
+			animation-play-state: running
+			opacity: 1
+		.form-cont
+			opacity: 0
+	small, label
+		font-size: 14px
+		display: inline-block
+		margin-bottom: 5px
+		color: #888
+.error-message
+	position: absolute
+	right: calc(0% + 15px)
+	bottom: 0px
+	width: 50%
+	font-size: 11px
+	color: red
+.intl-tel-input
+	width: 100%
+	margin-bottom: 10px
+.country-list
+	color: $text
+	z-index: 661
+
+.player
+	display: inline-block
+	position: relative
+	margin-bottom: 20px
+	margin-top: 40px
+	&:hover
+		picture
+			opacity: 0.4
+		
+		.thumb
+			background-color: $gr1
+		.play
+			border-color: #fff
+			svg
+				filter: invert(100%)
+	.thumb
+		position: relative
+		img
+			max-width: 560px
+			width: 100%
+	.play
+		background: none
+		position: absolute
+		top: calc(50% - 30px)
+		left: calc(50% - 30px)
+		width: 60px
+		height: 60px
+		min-height: auto
+		min-width: auto
+		border: 4px solid $gr0
+		padding-top: 4px
+		padding-left: 5px
+		padding-right: 0
+		padding-bottom: 0
+		outline: none
+		margin: 0
+		svg
+			max-width: 24px
+			filter: invert(0%)
+			outline: none
+	#ytplayerOne,
+	#ytplayerTwo,
+	#ytplayerThree
+		position: absolute
+		top: 0px
+
 .grafik
 	background-repeat: no-repeat
 	background-position: 0% 10px
@@ -505,280 +836,18 @@ ul
 	font-size: 18px
 .img-circle
 	border-radius: 50%
-h2
-	margin-bottom: 20px
-h3
-	font-size: 1.25rem
-	line-height: 1.75rem
-	margin-bottom: 30px
-	span
-		display: inline-block
-	small
-		font-size: 1rem
-	span
-		font-size: 1rem
-@keyframes anim_plus
-	0%
-		//transform: translateY(30%)
-		opacity: 0
-	.1%
-		//transform: translateY(30%)
-		opacity: 1
-	20%
-		//transform: translateY(30%)
-		opacity: 1
-	20.1%
-		//transform: translateY(30%)
-		opacity: 0
-	20.2%
-		//transform: translateY(-20%)
-		opacity: 0
-	20.3%
-		//transform: translateY(-20%)
-		opacity: 1
-	40%
-		//transform: translateY(-20%)
-		opacity: 1
-	40.1%
-		//transform: translateY(-20%)
-		opacity: 0
-	60.2%
-		//transform: translateY(60%)
-		opacity: 0
-	60.3%
-		//transform: translateY(60%)
-		opacity: 1
-	80%
-		//transform: translateY(60%)
-		opacity: 1
-	80.1%
-		//transform: translateY(60%)
-		opacity: 0
-	80.2%
-		//transform: translateY(20%)
-		opacity: 0
-	80.3%
-		//transform: translateY(20%)
-		opacity: 1
-	90%
-		//transform: translateY(0)
-		opacity: 1
-	90.1%
-		//transform: translateY(0)
-		opacity: 0
-	100%
-		transform: translateY(0)
-		opacity: 0
-@keyframes anim_plus2
-	40%
-		//transform: translateY(30%)
-		opacity: 0
-	40.1%
-		//transform: translateY(30%)
-		opacity: 1
-	50%
-		//transform: translateY(30%)
-		opacity: 1
-	50.1%
-		//transform: translateY(30%)
-		opacity: 0
-	50.2%
-		//transform: translateY(-20%)
-		opacity: 0
-	50.3%
-		//transform: translateY(-20%)
-		opacity: 1
-	60%
-		//transform: translateY(-20%)
-		opacity: 1
-	60.1%
-		//transform: translateY(-20%)
-		opacity: 0
-	70.2%
-		//transform: translateY(60%)
-		opacity: 0
-	70.3%
-		//transform: translateY(60%)
-		opacity: 1
-	80%
-		//transform: translateY(60%)
-		opacity: 1
-	80.1%
-		//transform: translateY(60%)
-		opacity: 0
-	80.2%
-		//transform: translateY(20%)
-		opacity: 0
-	100%
-		transform: translateY(0)
-		opacity: 0
-.lines
-	position: absolute
-	top: 20px
-	left: 0px
-	width: 100%
-	&>div
-		display: inline-block
-		width: 100%
-		margin-bottom: 2.5%
-		animation: anim_plus2 4s
-		animation-timing-function: linear
-		animation-iteration-count: infinite
-		&:nth-child(2)
-			animation: anim_plus 2s
-			animation-timing-function: linear
-			animation-iteration-count: infinite
-		&:nth-child(3)
-			animation: anim_plus2 6s
-			animation-timing-function: linear
-			animation-iteration-count: infinite
-		&:nth-child(4)
-			animation: anim_plus 3s
-			animation-timing-function: linear
-			animation-iteration-count: infinite
-		&:nth-child(5)
-			animation: anim_plus2 5s
-			animation-timing-function: linear
-			animation-iteration-count: infinite
-		&:nth-child(6)
-			animation: anim_plus 4s
-			animation-timing-function: linear
-			animation-iteration-count: infinite
-		&:nth-child(7)
-			animation: anim_plus2 2s
-			animation-timing-function: linear
-			animation-iteration-count: infinite
-		&:nth-child(8)
-			animation: anim_plus 6s
-			animation-timing-function: linear
-			animation-iteration-count: infinite
-		&:nth-child(9)
-			animation: anim_plus2 3s
-			animation-timing-function: linear
-			animation-iteration-count: infinite
-		&:nth-child(10)
-			animation: anim_plus 5s
-			animation-timing-function: linear
-			animation-iteration-count: infinite
-	svg
-		display: inline
-		max-width: 100%
-		opacity: .8
-		&.svg-25
-			max-width: 40%
-		&.svg-50
-			max-width: 70%
-		&.svg-75
-			max-width: 90%
-	line
-		stroke-width: 1px
-		stroke-dasharray: 150%
-		stroke-dashoffset: -150%
-		stroke: $cs
-		z-index: -1
-		opacity: .5
-		&.l1
-			animation: anim_lines3 .5s
-			animation-fill-mode: forwards
-			animation-timing-function: linear
-			animation-iteration-count: infinite
-			animation-delay: 1s
-		&.l2
-			animation: anim_lines3 1s
-			animation-fill-mode: forwards
-			animation-timing-function: linear
-			animation-iteration-count: infinite
-			animation-delay: 2s
-		&.l3
-			animation: anim_lines3 .5s
-			animation-fill-mode: forwards
-			animation-timing-function: linear
-			animation-iteration-count: infinite
-			animation-delay: 1s
-		&.l4
-			animation: anim_lines3 1s
-			animation-fill-mode: forwards
-			animation-timing-function: linear
-			animation-iteration-count: infinite
-			animation-delay: 2s
-@keyframes anim_lines3
-	100%
-		stroke-dasharray: 150%
-		stroke-dashoffset: 125%
-		stroke-width: 1px
-		stroke: $ca
-		opacity: 0
-	80%
-		stroke-dasharray: 150%
-		stroke-dashoffset: 125%
-		stroke-width: 1px
-		stroke: $ca
-		opacity: 0
-	60%
-		stroke-dasharray: 125%
-		stroke-dashoffset: 75%
-		stroke-width: 2px
-		opacity: 1
-	40%
-		stroke-dasharray: 100%
-		stroke-dashoffset: 0%
-		stroke-width: 1px
-		stroke: $cs
-	20%
-		stroke-dasharray: 125%
-		stroke-dashoffset: -75%
-		stroke-width: 2px
-	0%
-		stroke-dasharray: 150%
-		stroke-dashoffset: -150%
-		stroke-width: 2px
+ul.lists.mt3
+	margin-top: 60px
+	margin-top: 0px
+	margin-bottom: 0px
+	padding-bottom: 0
+ul.lists.mt6
+	padding-top: 120px
+	margin-top: 0px
+	margin-bottom: 0px
+	padding-bottom: 0
 
-@keyframes anim_lines2
-	100%
-		stroke-dasharray: 480
-		stroke-dashoffset: 50
-		stroke-width: 1px
-	70%
-		stroke-dasharray: 480
-		stroke-dashoffset: -1440
-		stroke-width: 2px
-	0%
-		stroke-dasharray: 480
-		stroke-dashoffset: -1920
-		stroke-width: 1px
-		stroke: $cs
-
-@keyframes anim_lines4
-	100%
-		stroke-dasharray: 480
-		stroke-dashoffset: 1540
-		stroke-width: 1px
-	30%
-		stroke-dasharray: 480
-		stroke-dashoffset: 480
-		stroke-width: 2px
-	0%
-		stroke-dasharray: 480
-		stroke-dashoffset: -480
-		stroke-width: 1px
-		stroke: $cs
-
-@keyframes anim_lines
-	100%
-		stroke-dasharray: 480
-		stroke-dashoffset: 50
-		stroke-width: 2px
-	45%
-		stroke-dasharray: 480
-		stroke-dashoffset: -480
-		stroke-width: 1px
-	25%
-		stroke-dasharray: 480
-		stroke-dashoffset: -1440
-		stroke-width: 2px
-	0%
-		stroke-dasharray: 480
-		stroke-dashoffset: -2400
-		stroke-width: 1px
-		stroke: $cs
-		
+iframe
+	max-width: 100%
+	height: auto
+	min-height: 200px
